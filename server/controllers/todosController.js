@@ -2,7 +2,6 @@ const { Todo } = require('../models')
 
 class TodosController {
     static add (req, res, next) {
-        console.log('ini kampr', req.UserId);
         const newTodo = {
             title: req.body.title,
             description: req.body.description,
@@ -17,7 +16,6 @@ class TodosController {
             return res.status(201).json(todo)
         })
         .catch((err) => {
-            console.log('ini dia >>>', err);
             next(err)
         })
     }
@@ -72,7 +70,6 @@ class TodosController {
             return res.status(200).json(todo)
         })
         .catch((err) => {
-            console.log('ni dia>>>', err);
             next(err)
         })
     }

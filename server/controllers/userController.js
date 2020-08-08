@@ -40,7 +40,6 @@ class UserController {
             }
         })
         .catch((err) => {
-            console.log('ini dia ???>', err);
             next(err)
         })
     }

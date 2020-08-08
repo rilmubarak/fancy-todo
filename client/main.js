@@ -352,45 +352,6 @@ function back (event) {
     $("#img-detail").hide()
 }
 
-//3th Party
-// function scan (id, even) {
-//     even.preventDefault()
-//     $("#register-form").hide()
-//     $("#login-form").hide()
-//     $("#logout").show()
-
-//     $('#table').hide()
-//     $('#table-list').hide()
-//     $("#add-button").hide()
-//     $("#form-add").hide()
-//     $("#form-edit").hide()
-    
-//     $('#add-error').hide()
-//     $('#edit-error').hide()
-//     $('#error-add').hide()
-//     $('#error-login').hide()
-//     $('#error-register').hide()
-//     $('#error-add').hide()
-
-//     $.ajax({
-//         method: "GET",
-//         url: `${baseUrl}/todos/${id}`,
-//         headers: {
-//           access_token: localStorage.token
-//         }
-//       })
-//       .done(todos => {
-//           console.log(todos);
-//           $('#img-detail').attr('src', todos.qrCode)
-//           $("#back-button").show()
-//     })
-//     .fail(err => {
-//     })
-//     .always(() => {
-//         console.log("ini always")
-//     })
-// }
-
 // Google-OAuth
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
