@@ -25,7 +25,7 @@ class TodosController {
     static show (req, res, next) {
         const id = req.UserId
 
-        Todo.findAll({where: {UserId:id}})
+        Todo.findAll({where: {UserId: id}, order: [[`createdAt`, `ASC`]]})
         .then((todo) => {
             return res.status(200).json(todo)
         })
@@ -56,7 +56,8 @@ class TodosController {
             title: req.body.title,
             description: req.body.description,
             status: req.body.status,
-            due_date: req.body.due_date
+            due_date: req.body.due_date,
+            qrCode: `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=title: ${req.body.title}. descripsi: ${req.body.description}`
         }
 
         Todo.findByPk(id)
