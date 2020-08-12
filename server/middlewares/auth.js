@@ -10,7 +10,7 @@ async function authentication (req, res, next) {
         const user = await User.findByPk(id)
 
         if (user) {
-            req.UserId = id
+            req.UserId = user.id
             next()
         } else {
             throw {status: 400, name: 'ErrorValidation', message: "Authentication User Failed"}
